@@ -1,0 +1,73 @@
+---
+export interface page {
+  name: string;
+  href: string;
+}
+
+const pages: page[] = [
+  { name: "活動について", href: "/about" },
+  { name: "ブログ", href: "/blog" },
+  { name: "アプリ", href: "/app" },
+];
+---
+
+<header>
+  <h1>県立千葉高校コンピュータ研究部</h1>
+  <nav>
+    <ul>
+      {
+        pages.map((page) => (
+          <li>
+            <a href={page.href}>{page.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  header {
+    position: relative;
+    background-color: $main-color;
+    color: $base-text-color;
+
+    h1 {
+      margin: 1rem;
+      text-align: center;
+      font-weight: normal;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      background-color: $sub-color;
+
+      ul {
+        margin: 0 auto;
+        padding: 0.5rem;
+        width: 600px;
+        max-width: 80%;
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+
+        li {
+          flex: 1;
+          border-left: 1px solid #000000;
+          text-align: center;
+
+          &:last-child {
+            border-right: 1px solid #000000;
+          }
+
+          a {
+            display: block;
+            width: 100%;
+            color: $base-text-color;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+</style>

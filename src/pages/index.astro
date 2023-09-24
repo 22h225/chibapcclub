@@ -1,19 +1,17 @@
 ---
 import Default from "../layouts/Default.astro";
+import Thumbnail from "../components/Thumbnail.astro";
 ---
 
-<Default title="県立千葉高校コンピュータ研究部">
-  <header>
-    <h1>県立千葉高校コンピュータ研究部</h1>
-  </header>
-  <div class="thumbnail"></div>
+<Default>
+  <Thumbnail text="kenchiba pc club" src="/thumbnail.jpg" />
   <main>
     <div>
       <h2>概要</h2>
       <p>
-        このサイトは、千葉県立千葉高等学校コンピュータ研究部が作成したウェブサイトです。
+        これは千葉県立千葉高等学校コンピュータ研究部が作成したウェブサイトです。
         コンピュータ研究部は部員数がとても少なく、活動もほとんどない部活です。
-        流石になにか活動をしなくてはと思い、このサイトを立ち上げました。
+        なにか活動をしなくてはと思い、このサイトを立ち上げました。
       </p>
     </div>
     <div>
@@ -28,31 +26,15 @@ import Default from "../layouts/Default.astro";
 </Default>
 
 <style lang="scss">
-  header {
-    position: relative;
-    padding: 1rem;
-    background-color: $main-color;
-    color: $base-text-color;
-
-    h1 {
-      margin: 0;
-      text-align: center;
-      font-size: 1.5rem;
-    }
-  }
-
-  .thumbnail {
-    width: 100%;
-    height: 300px;
-    box-shadow: inset 0 0 0.25rem 0 black;
-  }
-
   main {
-    padding: 1rem 3rem;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0 2rem 0;
 
     div {
-      margin: 1rem;
-      margin-bottom: 2rem;
+      margin: 0 auto;
+      width: 1200px;
+      max-width: 75%;
 
       p {
         margin: 1rem;
